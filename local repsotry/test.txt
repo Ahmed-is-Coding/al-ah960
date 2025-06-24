@@ -1,1 +1,12 @@
-hello from here hhhc hhhhh
+TARGET=$(( RANDOM % 10 + 1 ))
+G=0; ATTEMPTS=0
+
+while [ "$G" -ne "$TARGET" ]; do
+  read -p "Guess a number: " G
+  ATTEMPTS=$((ATTEMPTS + 1))
+  if [ "$G" -lt "$TARGET" ]; then echo "Higher"
+  elif [ "$G" -gt "$TARGET" ]; then echo "Lower"
+  else echo "Correct in $ATTEMPTS tries!"
+  fi
+done
+
